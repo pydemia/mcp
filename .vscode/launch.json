@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "[🌱]sse server: uvicorn: app-only",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["server:app", "--port=8080"],
+            "cwd": "${workspaceFolder}/servers/sample/sse",
+            "console": "internalConsole",
+            "envFile": "${workspaceFolder}/servers/sample/sse/.env",
+            "justMyCode": false
+        },
+        {
+            "name": "[🌱]sse client: uvicorn: app-only",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["client_app:app", "--port=8081"],
+            "cwd": "${workspaceFolder}/servers/sample/sse",
+            "console": "internalConsole",
+            "envFile": "${workspaceFolder}/servers/sample/sse/.env",
+            "justMyCode": false
+        },
+        {
+            "name": "Python test runner: debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "purpose": ["debug-test"],
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}/servers/sample/sse",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:${env:PYTHONPATH}"
+            },
+            "envFile": "${workspaceFolder}/agents_backend/.env",
+            "justMyCode": false
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+# mcp
+mcp[cli]
+uv
+fastapi #starlette
+uvicorn
+gunicorn
+langchain_core
